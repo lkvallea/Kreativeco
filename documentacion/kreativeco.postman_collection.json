@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "8697fcfa-0f2e-4fc2-8b30-449e4c098f7f",
+		"name": "kreativeco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9623519",
+		"_collection_link": ""
+	},
+	"item": [
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\":\"createUser\",\n    \"nickName\":\"usuarioCinco\",\n    \"name\": \"Andres\",\n    \"last_name\":\"Valle\",\n    \"email\":\"corre5s@corre.com\",\n    \"password\":\"password\",  //password\n    \"rol\":5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_api}}api/user.php",
+					"host": [
+						"{{test_api}}api"
+					],
+					"path": [
+						"user.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\":\"logIn\",\n    \"user\":\"usuarioCinco\",\n    \"password\" :\"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_api}}api/user.php",
+					"host": [
+						"{{test_api}}api"
+					],
+					"path": [
+						"user.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new POST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\":\"newPost\",\n    \"tittle\":\"Nuevo Posts\",\n    \"description\":\"ssssss\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_api}}api/controller.php",
+					"host": [
+						"{{test_api}}api"
+					],
+					"path": [
+						"controller.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit POST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\":\"editPost\",\n    \"tittle\":\"Nuevo Post\",\n    \"description\":\"post editadddossss\",\n    \"idPost\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_api}}api/controller.php",
+					"host": [
+						"{{test_api}}api"
+					],
+					"path": [
+						"controller.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete POST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\":\"deletePost\",\n    \"idPost\":\"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_api}}api/controller.php",
+					"host": [
+						"{{test_api}}api"
+					],
+					"path": [
+						"controller.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_api}}api/controller.php?action=getAllPost",
+					"host": [
+						"{{test_api}}api"
+					],
+					"path": [
+						"controller.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getAllPost"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_api}}api/controller.php?action=getAllUser",
+					"host": [
+						"{{test_api}}api"
+					],
+					"path": [
+						"controller.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getAllUser"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
